@@ -12,7 +12,14 @@ const root = ReactDOM.createRoot(el);
 
 // 4. Create a component.
 function App() {
-  return <textarea autoFocus></textarea>;
+  return (
+    <textarea
+      autoFocus
+      spellCheck={false}
+      className='bio'
+      style={{ border: '5px solid black' }}
+    ></textarea>
+  );
 }
 
 // 5. Show the component on the screen.
