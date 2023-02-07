@@ -12,14 +12,8 @@ const root = ReactDOM.createRoot(el);
 
 // 4. Create a component.
 function App() {
-  let userName = 'Saurabh Kumar';
-  let userAge = 23;
-
-  return (
-    <h1>
-      My name is {userName} and my age is {userAge}.
-    </h1>
-  );
+  const inputType = 'number';
+  return <input type={inputType} min={5} max={100} step={15} />;
 }
 
 // 5. Show the component on the screen.
