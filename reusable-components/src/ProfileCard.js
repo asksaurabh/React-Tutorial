@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
-function ProfileCard(props) {
-  // console.log(props);
-  const { title, twitterHandle } = props;
+function ProfileCard({ title, twitterHandle }) {
+  // const { title, twitterHandle } = props;
 
   return (
     <div>
