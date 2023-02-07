@@ -12,8 +12,13 @@ const root = ReactDOM.createRoot(el);
 
 // 4. Create a component.
 function App() {
-  <h4> This element will not show as it is not returned.</h4>;
-  return <h1>Hello React World!</h1>;
+  let greetMessage = 'Hello React World!';
+  if (Math.random() < 0.5) {
+    greetMessage = 'Bye React World!';
+  }
+
+  // Don't try to show any other data type except strings and numbers on the screen.
+  return <h1>{greetMessage}</h1>;
 }
 
 // 5. Show the component on the screen.
