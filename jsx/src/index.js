@@ -12,7 +12,8 @@ const root = ReactDOM.createRoot(el);
 
 // 4. Create a component.
 function App() {
-  return <h1>Hello React!</h1>;
+  <h4> This element will not show as it is not returned.</h4>;
+  return <h1>Hello React World!</h1>;
 }
 
 // 5. Show the component on the screen.
