@@ -12,8 +12,7 @@ const root = ReactDOM.createRoot(el);
 
 // 4. Create a component.
 function App() {
-  const inputType = 'number';
-  return <input type={inputType} min={5} max={100} step={15} />;
+  return <textarea autoFocus></textarea>;
 }
 
 // 5. Show the component on the screen.
