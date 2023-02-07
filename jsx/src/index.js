@@ -12,13 +12,7 @@ const root = ReactDOM.createRoot(el);
 
 // 4. Create a component.
 function App() {
-  let greetMessage = 'Hello React World!';
-  if (Math.random() < 0.5) {
-    greetMessage = 'Bye React World!';
-  }
-
-  // Don't try to show any other data type except strings and numbers on the screen.
-  return <h1>{greetMessage}</h1>;
+  return <h1>Time: {new Date().toLocaleTimeString()}</h1>;
 }
 
 // 5. Show the component on the screen.
