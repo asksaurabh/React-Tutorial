@@ -1,10 +1,14 @@
+/* eslint-disable no-unused-vars */
 import AnimalShow from './AnimalShow';
 
 function App() {
+  const handleClick = () => {
+    console.log('Button was clicked');
+  };
+
   return (
     <div>
-      <h1>Show animals here!</h1>
-      <AnimalShow />
+      <button onClick={handleClick}>Add Animal</button>
     </div>
   );
 }
