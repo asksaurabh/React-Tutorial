@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-function ProfileCard({ title, twitterHandle, imageURL }) {
+function ProfileCard({ title, twitterHandle, imageURL, description }) {
   const altText = `${title} logo`;
 
   return (
@@ -15,6 +15,7 @@ function ProfileCard({ title, twitterHandle, imageURL }) {
           <p className='title is-4'>{title}</p>
           <p className='subtitle is-6'>{twitterHandle}</p>
         </div>
+        <div className='content'>{description}</div>
       </div>
     </div>
   );
