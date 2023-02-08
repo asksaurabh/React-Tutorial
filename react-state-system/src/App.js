@@ -15,10 +15,14 @@ function App() {
     setAnimals([...animals, getRandomAnimal()]);
   };
 
+  const renderedAnimals = animals.map((animal, index) => {
+    return <AnimalShow type={animal} key={index} />;
+  });
+
   return (
     <div>
       <button onClick={onButtonClick}>Add Animal</button>
-      <div>{animals}</div>
+      <div>{renderedAnimals}</div>
     </div>
   );
 }
