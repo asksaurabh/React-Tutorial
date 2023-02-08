@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import AnimalShow from './AnimalShow';
+import './App.css';
 import { useState } from 'react';
 
 function getRandomAnimal() {
@@ -20,7 +21,7 @@ function App() {
   });
 
   return (
-    <div>
+    <div className='app'>
       <button onClick={onButtonClick}>Add Animal</button>
       <div>{renderedAnimals}</div>
     </div>
