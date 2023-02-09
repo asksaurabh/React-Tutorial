@@ -1,7 +1,13 @@
+import SearchBar from './components/SearchBar';
+
 function App() {
+  const onUserSubmit = (searchTerm) => {
+    console.log('Do a search with', searchTerm);
+  };
+
   return (
     <div>
-      <h1>App</h1>
+      <SearchBar onSubmit={onUserSubmit} />
     </div>
   );
 }
