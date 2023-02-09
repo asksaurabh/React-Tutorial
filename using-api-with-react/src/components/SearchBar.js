@@ -1,12 +1,14 @@
 function SearchBar({ onSubmit }) {
-  const onButtonClick = () => {
-    onSubmit('cars');
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+    onSubmit('carsssss');
   };
 
   return (
     <div>
-      <input type='text' />
-      <button onClick={onButtonClick}>Click Me!</button>
+      <form onSubmit={onFormSubmit}>
+        <input type='text' />
+      </form>
     </div>
   );
 }
