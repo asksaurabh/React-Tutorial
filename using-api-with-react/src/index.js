@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import searchImages from './unsplash-api';
+
+searchImages();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
