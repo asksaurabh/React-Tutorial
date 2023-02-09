@@ -1,8 +1,10 @@
 import SearchBar from './components/SearchBar';
+import getImages from './unsplash-api';
 
 function App() {
-  const onUserSubmit = (searchTerm) => {
-    console.log('Do a search with', searchTerm);
+  const onUserSubmit = async (searchTerm) => {
+    const searchedImages = await getImages(searchTerm);
+    console.log(searchedImages);
   };
 
   return (
