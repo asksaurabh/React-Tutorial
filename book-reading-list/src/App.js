@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useState } from 'react';
 import BookCreate from './components/BookCreate';
+import BookList from './components/BookList';
 
 function App() {
   const [books, setBooks] = useState([]);
@@ -16,18 +17,10 @@ function App() {
     setBooks(updatedBooks);
   };
 
-  const renderedBooks = books.map((book, index) => {
-    return (
-      <div key={index}>
-        {book.bookID} : {book.bookTitle}
-      </div>
-    );
-  });
-
   return (
-    <div>
+    <div className='app'>
+      <BookList books={books} />
       <BookCreate onCreate={createBook} />
-      <div>{renderedBooks}</div>
     </div>
   );
 }
