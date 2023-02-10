@@ -3,20 +3,24 @@ import { useState } from 'react';
 import BookCreate from './components/BookCreate';
 
 function App() {
-  const [bookID, setBookID] = useState(1);
   const [books, setBooks] = useState([]);
 
   const createBook = (bookTitle) => {
-    const updatedBooks = [...books, { bookID, bookTitle }];
+    const updatedBooks = [
+      ...books,
+      {
+        bookID: Math.floor(Math.random() * 9999) + 1,
+        bookTitle,
+      },
+    ];
     setBooks(updatedBooks);
-    setBookID(bookID + 1);
   };
 
   const renderedBooks = books.map((book, index) => {
     return (
-      <li key={index}>
+      <div key={index}>
         {book.bookID} : {book.bookTitle}
-      </li>
+      </div>
     );
   });
 
