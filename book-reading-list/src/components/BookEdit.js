@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
-function BookEdit({ book, onEdit }) {
+function BookEdit({ book, onBookUpdate }) {
   const [bookTitle, setBookTitle] = useState(book.bookTitle);
 
   const onSave = (event) => {
     event.preventDefault();
-    onEdit(book.bookID, bookTitle);
+    onBookUpdate(book.bookID, bookTitle);
   };
 
   const onBookTitleChange = (event) => {

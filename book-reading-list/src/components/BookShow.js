@@ -4,17 +4,22 @@ import BookEdit from './BookEdit';
 function BookShow({ book, onDelete, onEdit }) {
   const [showEdit, setShowEdit] = useState(false);
 
-  const onBookDelete = () => {
+  const onDeleteClick = () => {
     onDelete(book.bookID);
   };
 
-  const onBookEdit = () => {
+  const onEditClick = () => {
     setShowEdit(!showEdit);
+  };
+
+  const onBookUpdate = (bookID, newBookTitle) => {
+    setShowEdit(false);
+    onEdit(bookID, newBookTitle);
   };
 
   let content = <h3>{book.bookTitle}</h3>;
   if (showEdit === true) {
-    content = <BookEdit book={book} onEdit={onEdit} />;
+    content = <BookEdit book={book} onBookUpdate={onBookUpdate} />;
   }
 
   return (
@@ -22,10 +27,10 @@ function BookShow({ book, onDelete, onEdit }) {
       <div>{content}</div>
 
       <div className='actions'>
-        <button className='edit' onClick={onBookEdit}>
+        <button className='edit' onClick={onEditClick}>
           Edit
         </button>
-        <button className='delete' onClick={onBookDelete}>
+        <button className='delete' onClick={onDeleteClick}>
           Delete
         </button>
       </div>
