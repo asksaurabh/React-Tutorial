@@ -3,15 +3,27 @@ import { useState } from 'react';
 import BookCreate from './components/BookCreate';
 
 function App() {
+  const [bookID, setBookID] = useState(1);
   const [books, setBooks] = useState([]);
 
-  const createBook = (newBookTitle) => {
-    console.log('Need to add book with title of ', newBookTitle);
+  const createBook = (bookTitle) => {
+    const updatedBooks = [...books, { bookID, bookTitle }];
+    setBooks(updatedBooks);
+    setBookID(bookID + 1);
   };
+
+  const renderedBooks = books.map((book, index) => {
+    return (
+      <li key={index}>
+        {book.bookID} : {book.bookTitle}
+      </li>
+    );
+  });
 
   return (
     <div>
       <BookCreate onCreate={createBook} />
+      <div>{renderedBooks}</div>
     </div>
   );
 }
