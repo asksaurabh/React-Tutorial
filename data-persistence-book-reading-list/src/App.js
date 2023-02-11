@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+import axios from 'axios';
 import { useState } from 'react';
 import BookCreate from './components/BookCreate';
 import BookList from './components/BookList';
@@ -6,15 +7,12 @@ import BookList from './components/BookList';
 function App() {
   const [books, setBooks] = useState([]);
 
-  const createBook = (bookTitle) => {
-    const updatedBooks = [
-      ...books,
-      {
-        bookID: Math.floor(Math.random() * 9999) + 1,
-        bookTitle,
-      },
-    ];
+  const createBook = async (bookTitle) => {
+    const response = await axios.post('http://localhost:3001/books', {
+      bookTitle,
+    });
 
+    const updatedBooks = [...books, response.data];
     setBooks(updatedBooks);
   };
 
