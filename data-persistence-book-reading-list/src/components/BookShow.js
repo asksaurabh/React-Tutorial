@@ -5,7 +5,7 @@ function BookShow({ book, onDelete, onEdit }) {
   const [showEdit, setShowEdit] = useState(false);
 
   const onDeleteClick = () => {
-    onDelete(book.bookID);
+    onDelete(book.id);
   };
 
   const onEditClick = () => {

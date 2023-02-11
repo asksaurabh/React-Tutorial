@@ -27,16 +27,20 @@ function App() {
 
   const deleteBookById = (bookID) => {
     const updateBooks = books.filter((book) => {
-      return book.bookID !== bookID;
+      return book.id !== bookID;
     });
 
     setBooks(updateBooks);
   };
 
-  const editBookById = (bookID, newBookTitle) => {
+  const editBookById = async (bookID, newBookTitle) => {
+    const response = await axios.put(`http://localhost:3001/books/${bookID}`, {
+      bookTitle: newBookTitle,
+    });
+
     const updatedBooks = books.map((book) => {
-      if (book.bookID === bookID) {
-        return { ...book, bookTitle: newBookTitle };
+      if (book.id === bookID) {
+        return { ...book, ...response.data };
       }
       return book;
     });

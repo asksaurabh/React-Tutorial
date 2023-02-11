@@ -5,7 +5,7 @@ function BookEdit({ book, onBookUpdate }) {
 
   const onSave = (event) => {
     event.preventDefault();
-    onBookUpdate(book.bookID, bookTitle);
+    onBookUpdate(book.id, bookTitle);
   };
 
   const onBookTitleChange = (event) => {
