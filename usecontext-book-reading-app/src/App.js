@@ -1,5 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable no-unused-vars */
 import { useEffect } from 'react';
 import BookCreate from './components/BookCreate';
 import BookList from './components/BookList';
