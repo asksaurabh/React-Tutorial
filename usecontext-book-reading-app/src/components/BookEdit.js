@@ -1,11 +1,14 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import BooksContext from '../context/books';
 
 function BookEdit({ book, onBookUpdate }) {
   const [bookTitle, setBookTitle] = useState(book.bookTitle);
+  const { editBookById } = useContext(BooksContext);
 
   const onSave = (event) => {
     event.preventDefault();
-    onBookUpdate(book.id, bookTitle);
+    onBookUpdate();
+    editBookById(book.id, bookTitle);
   };
 
   const onBookTitleChange = (event) => {
