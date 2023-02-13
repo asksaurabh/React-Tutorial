@@ -11,7 +11,7 @@ function Button({
   danger,
   outline,
   rounded,
-  onClick,
+  ...rest
 }) {
   const classes = classNames('flex items-center px-3 py-1.5 border', {
     'border-blue-600 bg-blue-500': primary,
@@ -31,7 +31,7 @@ function Button({
   });
 
   return (
-    <button onClick={onClick} className={classes}>
+    <button {...rest} className={classes}>
       {children}
     </button>
   );
