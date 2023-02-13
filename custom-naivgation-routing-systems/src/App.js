@@ -2,10 +2,14 @@ import Button from './Button';
 import { GoBell, GoDesktopDownload, GoDatabase } from 'react-icons/go';
 
 function App() {
+  const onButtonClick = () => {
+    console.log('Click!');
+  };
+
   return (
     <div>
       <div>
-        <Button success outline>
+        <Button success outline onClick={onButtonClick}>
           <GoBell />
           Hola Espanol!
         </Button>
