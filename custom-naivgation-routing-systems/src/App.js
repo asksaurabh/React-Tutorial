@@ -4,7 +4,9 @@ function App() {
   return (
     <div>
       <div>
-        <Button>Hola Espanol!</Button>
+        <Button success rounded outline>
+          Hola Espanol!
+        </Button>
       </div>
       <div>
         <Button>Bonjour monde!</Button>
