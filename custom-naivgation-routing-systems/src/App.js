@@ -9,16 +9,20 @@ function App() {
         </Button>
       </div>
       <div>
-        <Button>Bonjour monde!</Button>
+        <Button danger>Bonjour monde!</Button>
       </div>
       <div>
-        <Button>Hallo Welt!</Button>
+        <Button warning outline>
+          Hallo Welt!
+        </Button>
       </div>
       <div>
-        <Button>Halo Dunia!</Button>
+        <Button secondary rounded>
+          Halo Dunia!
+        </Button>
       </div>
       <div>
-        <Button>Salamu Dunia!</Button>
+        <Button primary>Salamu Dunia!</Button>
       </div>
     </div>
   );
