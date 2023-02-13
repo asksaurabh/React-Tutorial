@@ -4,16 +4,19 @@ function App() {
   return (
     <div>
       <div>
-        <Button />
+        <Button>Hola Espanol!</Button>
       </div>
       <div>
-        <Button />
+        <Button>Bonjour monde!</Button>
       </div>
       <div>
-        <Button />
+        <Button>Hallo Welt!</Button>
       </div>
       <div>
-        <Button />
+        <Button>Halo Dunia!</Button>
+      </div>
+      <div>
+        <Button>Salamu Dunia!</Button>
       </div>
     </div>
   );
