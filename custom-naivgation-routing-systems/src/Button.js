@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 function Button({
   children,
