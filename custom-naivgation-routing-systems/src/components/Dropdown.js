@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function Dropdown({ options, selection, onSelect }) {
+function Dropdown({ options, value, onChange }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleDropdownClick = () => {
@@ -11,7 +11,7 @@ function Dropdown({ options, selection, onSelect }) {
 
   const handleOptionClick = (option) => {
     setIsOpen(false);
-    onSelect(option);
+    onChange(option);
   };
 
   const renderedOptions = options.map((option) => {
@@ -22,7 +22,7 @@ function Dropdown({ options, selection, onSelect }) {
     );
   });
 
-  const dropdownText = selection ? selection.label : 'Select...';
+  const dropdownText = value ? value.label : 'Select...';
   const dropdownOptions = isOpen && <div>{renderedOptions}</div>;
 
   return (
