@@ -21,7 +21,9 @@ function App() {
         </Button>
       </div>
       <div>
-        <Button warning>Hallo Welt!</Button>
+        <Button warning outline>
+          Hallo Welt!
+        </Button>
       </div>
       <div>
         <Button secondary rounded outline>
