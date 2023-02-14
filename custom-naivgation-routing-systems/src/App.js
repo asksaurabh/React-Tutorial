@@ -1,5 +1,26 @@
+import Dropdown from './components/Dropdown';
+
 function App() {
-  return <div>App</div>;
+  const options = [
+    {
+      label: 'Red',
+      value: 'red',
+    },
+    {
+      label: 'Green',
+      value: 'green',
+    },
+    {
+      label: 'Blue',
+      value: 'blue',
+    },
+  ];
+
+  return (
+    <div>
+      <Dropdown options={options} />
+    </div>
+  );
 }
 
 export default App;
