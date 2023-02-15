@@ -30,6 +30,11 @@ function App() {
         value={selection}
         onChange={handleOptionSelect}
       />
+      <Dropdown
+        options={options}
+        value={selection}
+        onChange={handleOptionSelect}
+      />
     </div>
   );
 }
