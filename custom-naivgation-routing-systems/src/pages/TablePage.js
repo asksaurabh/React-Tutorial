@@ -11,12 +11,15 @@ function TablePage() {
   const config = [
     {
       label: 'Fruit',
+      render: (fruit) => fruit.name,
     },
     {
       label: 'Color',
+      render: (fruit) => <div className={`p-3 m-2 ${fruit.color}`}></div>,
     },
     {
       label: 'Score',
+      render: (fruit) => fruit.score,
     },
   ];
 
