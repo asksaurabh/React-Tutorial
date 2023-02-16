@@ -10,12 +10,16 @@ function ModalPage() {
     setIsModalOpen(true);
   };
 
+  const handleClose = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div>
       <Button onClick={handleClick} primary>
         Open Modal
       </Button>
-      {isModalOpen && <Modal />}
+      {isModalOpen && <Modal onClose={handleClose} />}
     </div>
   );
 }
