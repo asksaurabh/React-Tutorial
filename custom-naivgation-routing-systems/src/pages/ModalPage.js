@@ -6,7 +6,6 @@ function ModalPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleClick = () => {
-    console.log('Open Modal');
     setIsModalOpen(true);
   };
 
@@ -14,12 +13,26 @@ function ModalPage() {
     setIsModalOpen(false);
   };
 
+  const actionBar = (
+    <Button onClick={handleClose} primary>
+      I Accept
+    </Button>
+  );
+  const modal = (
+    <Modal onClose={handleClose} actionBar={actionBar}>
+      <p>
+        This site use cookies. Please accept to personalize for your
+        suggestions.
+      </p>
+    </Modal>
+  );
+
   return (
     <div>
       <Button onClick={handleClick} primary>
         Open Modal
       </Button>
-      {isModalOpen && <Modal onClose={handleClose} />}
+      {isModalOpen && modal}
     </div>
   );
 }
