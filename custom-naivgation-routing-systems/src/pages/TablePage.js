@@ -21,6 +21,10 @@ function TablePage() {
       label: 'Score',
       render: (fruit) => fruit.score,
     },
+    {
+      label: 'GCount',
+      render: (fruit) => fruit.score * 100,
+    },
   ];
 
   return (
