@@ -20,10 +20,11 @@ function TablePage() {
     {
       label: 'Score',
       render: (fruit) => fruit.score,
-    },
-    {
-      label: 'GCount',
-      render: (fruit) => fruit.score * 100,
+      header: (key) => (
+        <th key={key} className='bg-red-500'>
+          Score
+        </th>
+      ),
     },
   ];
 
