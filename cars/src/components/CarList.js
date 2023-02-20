@@ -3,19 +3,29 @@ import { removeCar } from '../store';
 
 function CarList() {
   const dispatch = useDispatch();
-  const cars = useSelector(({ cars: { searchTerm, carsList } }) => {
-    return carsList.filter((car) =>
-      car.carName.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-  });
+  const { cars, carName } = useSelector(
+    ({ form, cars: { searchTerm, carsList } }) => {
+      const filteredCars = carsList.filter((car) =>
+        car.carName.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+
+      return {
+        cars: filteredCars,
+        carName: form.carName,
+      };
+    }
+  );
 
   const handleCarDelete = (car) => {
     dispatch(removeCar(car.id));
   };
 
   const renderedCars = cars.map((car) => {
+    const bold =
+      carName && car.carName.toLowerCase().includes(carName.toLowerCase());
+
     return (
-      <div key={car.id} className='panel'>
+      <div key={car.id} className={`panel ${bold && 'bold'}`}>
         <p>
           {car.carName} - ${car.carCost}
         </p>
