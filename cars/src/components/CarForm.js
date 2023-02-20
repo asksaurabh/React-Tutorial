@@ -22,8 +22,6 @@ function CarForm() {
   const handleCarSubmit = (event) => {
     event.preventDefault();
     dispatch(addCar({ carName, carCost }));
-    dispatch(changeName(''));
-    dispatch(changeCost(0));
   };
 
   return (
